@@ -1,0 +1,56 @@
+[
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "rand",
+        "kind": 2,
+        "importPath": "monty-hall",
+        "description": "monty-hall",
+        "peekOfCode": "def rand(): return random.randint(0, 2)\n# random but not equal to x\ndef randx(x):\n    y = rand()\n    return y if x != y else randx(x)\n# 3 doors, one of which contains the car.\ndef createDoors():\n    doors = [False] * 3\n    doors[rand()] = True\n    return doors",
+        "detail": "monty-hall",
+        "documentation": {}
+    },
+    {
+        "label": "randx",
+        "kind": 2,
+        "importPath": "monty-hall",
+        "description": "monty-hall",
+        "peekOfCode": "def randx(x):\n    y = rand()\n    return y if x != y else randx(x)\n# 3 doors, one of which contains the car.\ndef createDoors():\n    doors = [False] * 3\n    doors[rand()] = True\n    return doors\ndef simulateGame(changeGuess):\n    # randomly generate the doors and make a guess",
+        "detail": "monty-hall",
+        "documentation": {}
+    },
+    {
+        "label": "createDoors",
+        "kind": 2,
+        "importPath": "monty-hall",
+        "description": "monty-hall",
+        "peekOfCode": "def createDoors():\n    doors = [False] * 3\n    doors[rand()] = True\n    return doors\ndef simulateGame(changeGuess):\n    # randomly generate the doors and make a guess\n    doors = createDoors()\n    guess1 = rand()\n    # never reveal the car or guess1\n    n = randx(guess1)",
+        "detail": "monty-hall",
+        "documentation": {}
+    },
+    {
+        "label": "simulateGame",
+        "kind": 2,
+        "importPath": "monty-hall",
+        "description": "monty-hall",
+        "peekOfCode": "def simulateGame(changeGuess):\n    # randomly generate the doors and make a guess\n    doors = createDoors()\n    guess1 = rand()\n    # never reveal the car or guess1\n    n = randx(guess1)\n    reveal = n if not doors[n] else 3 - n - guess1\n    # guess2 can only be the last remaining door\n    guess2 = 3 - reveal - guess1\n    return doors[guess2] if changeGuess else doors[guess1]",
+        "detail": "monty-hall",
+        "documentation": {}
+    },
+    {
+        "label": "results",
+        "kind": 5,
+        "importPath": "monty-hall",
+        "description": "monty-hall",
+        "peekOfCode": "results = [simulateGame(changeGuess=True) for i in range(1000)]\nprint(f'won {sum(results)} out of {len(results)}')",
+        "detail": "monty-hall",
+        "documentation": {}
+    }
+]
