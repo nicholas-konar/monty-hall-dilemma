@@ -1,5 +1,11 @@
 import random
 
+# number of game simulations to run
+k = 1000
+
+# whether the contestant should change their guess or not
+changeGuess = True
+
 
 def rand(): return random.randint(0, 2)
 
@@ -31,6 +37,6 @@ def simulateGame(changeGuess):
     return doors[guess2] if changeGuess else doors[guess1]
 
 
-results = [simulateGame(changeGuess=True) for i in range(1000)]
+results = [simulateGame(changeGuess) for i in range(k)]
 
 print(f'won {sum(results)} out of {len(results)}')
